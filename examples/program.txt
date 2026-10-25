@@ -1,0 +1,5 @@
+LOAD "students.csv"
+FILTER marks > 75
+AVERAGE marks
+SORT marks DESC
+DISPLAY
