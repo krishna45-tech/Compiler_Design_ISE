@@ -1,0 +1,38 @@
+Sample codes to test the working of DSL compiler ;)
+
+1. For valid input:
+
+LOAD "students.csv"
+SELECT name, age, marks, department
+FILTER marks > 75
+SORT marks DESC
+DISPLAY
+SAVE "result.csv"
+END
+
+2. Test syntax error handling
+
+LOAD "students.csv"
+SELECT name marks
+DISPLAY
+END
+
+3. Test semantic error handling
+
+LOAD "students.csv"
+SELECT name, salary
+DISPLAY
+END
+
+4. Test invalid command handling
+
+LOAD "students.csv"
+SHOW name
+END
+
+5. Test command-order validation
+
+SELECT name, marks
+LOAD "students.csv"
+DISPLAY
+END
